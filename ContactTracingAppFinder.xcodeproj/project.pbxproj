@@ -148,7 +148,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftformat --swiftversion 5.2 --stripunusedargs closure-only --disable redundantReturn .\n\n";
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5.2 --stripunusedargs closure-only --disable redundantReturn .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
